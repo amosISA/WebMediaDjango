@@ -1,1 +1,30 @@
-extends {%base.html%}
+{%extends 'base.html' %}
+
+{% block header%}
+<h1> VideosElCha </h1>
+{% endblock header %}
+
+
+
+{% block content%}
+
+    {% if Videos.count > 0 %}
+        {% for video in Videos  %}
+            <div id="{{video.id}}" class="video">
+                <h4>{{video.Title}}</h4>
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        No videos =(
+
+    {% endif %}
+{% endblock content %}
+
+
+
+{% block footer %}
+    Wololo 2016 (?)
+{% endblock footer %}
